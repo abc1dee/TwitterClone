@@ -24,8 +24,15 @@ html{
 }
 
 :root{
-    --twitter-theme-color: #50b7f5;
+    --twitter-theme-color: #f5cf50;
     --twitter-background-color: #e6ecf0;
+}
+
+.profile-picture {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 10px; /* Adjust the margin as needed */
 }
 
 .nav_logo{
@@ -51,14 +58,6 @@ html{
     margin-right: 20px;
 }
 
-.logout-link {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits color from parent element */
-    display: flex; /* Aligns the child elements (icon and text) */
-    align-items: center; /* Centers the child elements vertically */
-    /* Add any other styles as needed */
-}
-
 .Menu_options:hover{
     background-color: var(--twitter-background-color);
     border-radius: 30px;
@@ -73,6 +72,14 @@ html{
     font-weight: bold;
     border-radius: 30px;
     height: 50px;
+}
+
+.logout-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent element */
+    display: flex; /* Aligns the child elements (icon and text) */
+    align-items: center; /* Centers the child elements vertically */
+    /* Add any other styles as needed */
 }
 
 body{
@@ -116,6 +123,33 @@ background-color: rgba(128, 128, 128, 0.185);
 .repeat-icon {
     color: black; /* Set the default color */
     transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+.icon-container {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: flex-start; /* Align to the top */
+}
+
+.aside_container {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f8fae5;
+    border-radius: 20px;
+}
+
+.icon {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover; /* Ensure the image covers the container */
+    margin: 0; /* Reset margin */
 }
 
 .repeat-icon-clicked
@@ -291,12 +325,16 @@ aside{
     color: gray;
 }
 
-.aside_container{
+.aside_container {
     margin-top: 15px;
     margin-left: 20px;
     padding: 20px;
-    background-color: #f5f8fa;
+    background-color: #f8fae5;
     border-radius: 20px;
+
+    /* Replace 'border-image.png' with your actual file path */
+    border: 20px solid transparent;
+    border-image: url('feedimages/border1.png') 20 repeat;
 }
 
 .aside_container h2{
