@@ -51,6 +51,14 @@ html{
     margin-right: 20px;
 }
 
+.logout-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent element */
+    display: flex; /* Aligns the child elements (icon and text) */
+    align-items: center; /* Centers the child elements vertically */
+    /* Add any other styles as needed */
+}
+
 .Menu_options:hover{
     background-color: var(--twitter-background-color);
     border-radius: 30px;
