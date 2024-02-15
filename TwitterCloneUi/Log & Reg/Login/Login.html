@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="loginapi.js"></script>
 </head>
 <body>
     <div class="center">
         <h1>Login</h1>
-        <form onsubmit="return redirectToIndex()">
+        <form onsubmit="login(event)">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" id="username" name="username" required>
                 <span></span>
-                <label>Username</label>
+                <label for="username">Username</label>
             </div>
             <div class="txt_field">
-                <input type="text" required>
+                <input type="password" id="password" name="password" required>
                 <span></span>
-                <label>Password</label>
+                <label for="password">Password</label>
             </div>
             <div class="pass">Forgot Password?</div>
             <input type="submit" value="Login">
@@ -29,11 +30,6 @@
         </form>
     </div>
 
-    <script>
-        function redirectToIndex() {
-            window.location.href='../../index.html';
-            return false; // Prevents the form from actually submitting
-        }
-    </script>
+    
 </body>
 </html>
