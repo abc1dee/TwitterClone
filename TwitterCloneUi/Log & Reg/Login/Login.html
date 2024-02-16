@@ -10,8 +10,31 @@
 </head>
 <body>
     <div class="center">
-        <h1>Login</h1>
-        <form onsubmit="login(event)">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./logreg pics/capy1.png" alt="Image 1">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./logreg pics/capy2.png" alt="Image 2">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./logreg pics/capy3.png" alt="Image 3">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./logreg pics/capy4.png" alt="Image 4">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./logreg pics/capy5.png" alt="Image 5">
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h1><img src="./logreg pics/icon-log.png" alt="Login Icon" class="login-icon"> Login</h1>
+            <form onsubmit="login(event)">
             <div class="txt_field">
                 <input type="text" id="username" name="username" required>
                 <span></span>
@@ -29,6 +52,8 @@
             </div>
         </form>
     </div>
+
+    <script src="slideshow.js"></script>
 
     
 </body>
