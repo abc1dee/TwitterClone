@@ -2,17 +2,18 @@ body {
     margin: 0;
     padding: 0%;
     font-family: arial;
-    background: linear-gradient(120deg, #101820ff, #f2aa4cff);
+    background: url('./logreg pics/profbg.png') center/cover; /* Replace 'your-image-path.jpg' with the path to your image */
     height: 100vh;
     overflow: hidden;
 }
+
 
 .center {
     display: flex;
     justify-content: space-between;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     width: 800px; /* Adjust the total width as needed */
     background-color: transparent;
