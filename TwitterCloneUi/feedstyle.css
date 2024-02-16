@@ -167,6 +167,17 @@ nav{
     padding-right: 20px;
 }
 
+.aside_container.followers {
+  background-color: #fff; /* Set your background color */
+  border: 1px solid #ddd; /* Set your border style */
+  border-radius: 10px; /* Set border-radius for rounded corners */
+  padding: 20px; /* Set padding as needed */
+  margin-right: 20px; /* Add margin to the right to move it to the left */
+}
+
+
+
+
 /* == menu section */
 
 .favorite-icon {
@@ -635,6 +646,13 @@ aside{
         padding: 10px;
     }
 
+    .menubutton {
+      width: 100%; /* Make the button full width */
+      max-width: 300px; /* Set a maximum width if needed */
+      margin: 0 auto; /* Center the button horizontally */
+    }
+  
+
     main {
         flex: 1;
         overflow-y: scroll;
@@ -671,7 +689,17 @@ aside{
     .headerfeed {
         display: none; /* Hide the nav logo in the navigation bar */
     }
+
+    .nav_logo{
+      width: 100px;
+      height: 50px;
+      color: var(--twitter-theme-color);
+      fill: currentColor;
+      margin-right: 10px;
+    }
+    
 }
+
 
 
 
