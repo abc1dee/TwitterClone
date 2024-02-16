@@ -762,6 +762,21 @@ aside{
     margin-left: 10px; /* Adjust the margin as needed */
 }
 
+.aside_container.followers {
+    background-color: #fff; /* Set your background color */
+    border: 1px solid #ddd; /* Set your border style */
+    border-radius: 10px; /* Set border-radius for rounded corners */
+    padding: 20px; /* Set padding as needed */
+    margin-right: 20px; /* Add margin to the right to move it to the left */
+    width: 200px;
+  }
+  .user_avatar {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }  
+
 @media only screen and (max-width: 608px) {
     body {
         flex-direction: column-reverse;

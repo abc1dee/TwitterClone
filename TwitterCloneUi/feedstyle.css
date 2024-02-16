@@ -35,6 +35,13 @@ html{
     margin-right: 10px; /* Adjust the margin as needed */
 }
 
+.user_avatar {
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
 .nav_logo{
     width: 50px;
     height: 50px;
@@ -173,6 +180,7 @@ nav{
   border-radius: 10px; /* Set border-radius for rounded corners */
   padding: 20px; /* Set padding as needed */
   margin-right: 20px; /* Add margin to the right to move it to the left */
+  width: 230px;
 }
 
 
