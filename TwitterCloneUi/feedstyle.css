@@ -619,7 +619,7 @@ aside{
   
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 608px) {
     body {
         flex-direction: column-reverse;
     }
@@ -696,6 +696,10 @@ aside{
       color: var(--twitter-theme-color);
       fill: currentColor;
       margin-right: 10px;
+    }
+
+    .aside_container.followers{
+      display: none;
     }
     
 }

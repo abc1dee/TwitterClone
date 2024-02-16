@@ -20,6 +20,15 @@ body{
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
 }
+
+.reg-icon {
+    position: absolute;
+    top: 0; /* Adjust as needed to position the image accurately */
+    left: 60px; /* Adjust as needed to position the image accurately */
+    z-index: 1; /* Set z-index to 1 to bring the image over the text */
+    width: 70px;
+  }
+  
 .center form{
     padding: 0 40px;
     box-sizing: border-box;
@@ -96,3 +105,4 @@ input[type="submit"]:hover{
 .signup_link a:hover{
     text-decoration: underline;
 }
+
