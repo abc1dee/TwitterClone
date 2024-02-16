@@ -240,7 +240,7 @@ main::-webkit-scrollbar{
 .post_profile-image img{
     border-radius: 50%;
     height: 40px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .post{
@@ -256,9 +256,7 @@ main::-webkit-scrollbar{
     border-radius: 20px;
 }
 
-.post_body {
-    margin-top: 100px;
-}
+
 
 .post_footer{
     display: flex;
@@ -618,7 +616,7 @@ aside{
     height: 200px; /* Set the desired height */
     width: 100%; /* Adjusted width to 100% */
     padding: 10px; /* Adjust padding as needed */
-    margin-bottom:;
+    margin-bottom:
 }
 
 .profileid {

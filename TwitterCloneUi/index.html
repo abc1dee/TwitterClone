@@ -13,7 +13,7 @@
 
       <link rel="stylesheet" href="feedstyle.css">
 
-      
+      <script src="post.js"></script>   
 
       
       
@@ -102,11 +102,11 @@
         </div>
 
         <div class="tweet_box">
-            <form>
+          <form id="signupForm">
                 <div class="tweet_box-input">
                     <img src="feedimages/profilepic.png" alt="profile imagw">
-                    <input type="text" placeholder="What's happening?">
-                    <button class="">Tweet</button>
+                    <input type="text" placeholder="What's happening?" id="userPost">
+                    <button type="submit" class="">Tweet</button>
 
                 </div>
             </form>
@@ -178,7 +178,7 @@
         
 
 
-        
+        <div class="feed"></div>
 
     </main>
     <!-- main section end -->
@@ -287,42 +287,7 @@
         
     </aside>
     <!-- aside element ends -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const favoriteIcon = document.getElementById("favoriteIcon");
-        const repeatIcon = document.getElementById("repeatIcon");
-
-        favoriteIcon.addEventListener("click", function() {
-            // Toggle the clicked class on click
-            favoriteIcon.classList.toggle("favorite-icon-clicked");
-        });
-
-        favoriteIcon.addEventListener("mouseover", function() {
-            // Add the hover class on mouseover
-            favoriteIcon.classList.add("favorite-icon-hover");
-        });
-
-        favoriteIcon.addEventListener("mouseout", function() {
-            // Remove the hover class on mouseout
-            favoriteIcon.classList.remove("favorite-icon-hover");
-        });
-
-        repeatIcon.addEventListener("click", function() {
-            // Toggle the clicked class for repeat icon on click
-            repeatIcon.classList.toggle("repeat-icon-clicked");
-        });
-
-        repeatIcon.addEventListener("mouseover", function() {
-            // Add the hover class for repeat icon on mouseover
-            repeatIcon.classList.add("repeat-icon-hover");
-        });
-
-        repeatIcon.addEventListener("mouseout", function() {
-            // Remove the hover class for repeat icon on mouseout
-            repeatIcon.classList.remove("repeat-icon-hover");
-        });
-    });
-</script>
+    
     
 </body>
 </html>
