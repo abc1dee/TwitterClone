@@ -169,3 +169,48 @@ img {
     height: auto;
     margin-right: 10px; /* Adjust the margin as needed */
 }
+
+
+@media only screen and (max-width: 600px) {
+    .center {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+    body {
+        margin: 0;
+        padding: 0%;
+        font-family: arial;
+        background: linear-gradient(120deg, #101820ff, #f2aa4cff);
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .center {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center elements horizontally */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%; /* Adjust the width as needed for mobile */
+        background-color: white;
+        border-radius: 15px;
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0; /* Rounded border on the top for images */
+    }
+    
+    .form-container {
+        width: 100%; /* Take up the full width on small screens */
+        padding: 20px;
+        border-radius: 15px 15px 15px 15px; /* Rounded border on the bottom for the form */
+    }
+    
+    /* Add your existing CSS styles here */
+    .slideshow-container {
+        display: none;
+    }
+}
