@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="signupapi.js"></script>
+</head>
+<body>
+    <div class="center">
+        <h1><img src="../Login/logreg pics/icon-log.png" alt="Login Icon" class="reg-icon"> Register</h1>
+        <form id="signupForm" method="post">
+            <div class="txt_field">
+                <input type="text" name="username" id="username" required>
+                <span></span>
+                <label for="username">Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" id="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" id="password" required>
+                <span></span>
+                <label for="password">Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+                <span></span>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <input type="submit" value="Create Account">
+            <div class="signup_link">
+                Already have an account? <a href="../Login/Login.html">Login</a>
+            </div>
+        </form>
+    </div>
+
+   
+</body>
+</html>
