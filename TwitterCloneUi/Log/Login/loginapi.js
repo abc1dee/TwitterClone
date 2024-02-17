@@ -23,7 +23,7 @@ async function login(event) {
             const data = await res.text();
             // Storing token in localStorage
             localStorage.setItem('token', data);
-            document.cookie = "loginToken=" + data + ";path=/";
+            
             window.location.href = '../../index.html';
         } else if (res.status === 401) {
             alert("Your login credentials don't match a user in our system.");
