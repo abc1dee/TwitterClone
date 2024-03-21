@@ -166,7 +166,6 @@ function formatElapsedTime(dateTimeString) {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('signupForm');
 
@@ -182,4 +181,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial display of posts when the page loads
     displayPosts();
+    displayFollowing();
+
 });
+
+async function displayFollowing(){
+    const listOfFollowing = await getFollowing();
+    console.log(typeof listOfFollowing)
+    const followButtonOne = document.getElementById('followOne')
+    const followButtonTwo = document.getElementById('followTwo')
+    if (listOfFollowing.includes('johndoe')){
+        followButtonOne.textContent = 'Follow'
+    }
+    else {
+        followButtonOne.textContent = 'Unfollow'
+    }
+    if (listOfFollowing.includes('janesmith')){
+        followButtonTwo.textContent = 'Unfollow'
+    }
+    else {
+        followButtonTwo.textContent = 'Follow'
+    }
+}
+
+async function getFollowing() {
+    const currentToken = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+    const url = `/api/v1/users/${username}/following`
+    
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${currentToken}`,
+                "Content-Type": "application/json"
+            }
+        });
+        const following = await response.json();
+        return following
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error; // Rethrow the error for handling in the calling function
+    }
+}
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const form = document.getElementById('followFormOne');
+
+//     form.addEventListener('submit', async function (event) {
+
+//         createPost(postContent);
+//     });
+
+//     // Initial display of posts when the page loads
+//     displayPosts();
+// });
