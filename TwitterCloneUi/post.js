@@ -179,22 +179,74 @@ document.addEventListener('DOMContentLoaded', function () {
         createPost(postContent);
     });
 
+    const followButton = document.getElementById('followOne');
+    
+    followButton.addEventListener('click', async function() {
+        console.log('tester');
+        const token = localStorage.getItem('token');
+        const userToFollow = localStorage.getItem('username');
+        const userToBeFollowed = 'johndoe';
+
+        if (followButton.textContent == 'Follow') {
+            try {
+                await followUser(userToFollow, userToBeFollowed);
+                followButton.textContent = 'Unfollow'
+            } catch (error) {
+                console.error('Error following user:', error);
+            }
+        }
+        else {
+            try {
+                const response = await unfollowUser(userToFollow, userToBeFollowed);
+                followButton.textContent = 'Follow'
+                console.log('User has successfully been unfollowed');
+            } catch (error) {
+                console.error('Error unfollowing user:', error);
+            }
+        }
+    });
+    const followButtonTwo = document.getElementById('followTwo');
+    
+    followButtonTwo.addEventListener('click', async function() {
+        const token = localStorage.getItem('token');
+        const userToFollow = localStorage.getItem('username');
+        const userToBeFollowed = 'janesmith';
+
+        if (followButtonTwo.textContent == 'Follow') {
+            try {
+                await followUser(userToFollow, userToBeFollowed);
+                followButtonTwo.textContent = 'Unfollow'
+            } catch (error) {
+                console.error('Error following user:', error);
+            }
+        }
+        else {
+            try {
+                const response = await unfollowUser(userToFollow, userToBeFollowed);
+                followButtonTwo.textContent = 'Follow'
+                console.log('User has successfully been unfollowed');
+            } catch (error) {
+                console.error('Error unfollowing user:', error);
+            }
+        }
+    });
+
     // Initial display of posts when the page loads
     displayPosts();
     displayFollowing();
-
+    displayUsers();
 });
 
 async function displayFollowing(){
     const listOfFollowing = await getFollowing();
-    console.log(typeof listOfFollowing)
+    listOfFollowing.forEach(username => console.log(username));
     const followButtonOne = document.getElementById('followOne')
     const followButtonTwo = document.getElementById('followTwo')
     if (listOfFollowing.includes('johndoe')){
-        followButtonOne.textContent = 'Follow'
+        followButtonOne.textContent = 'Unfollow'
     }
     else {
-        followButtonOne.textContent = 'Unfollow'
+        followButtonOne.textContent = 'Follow'
     }
     if (listOfFollowing.includes('janesmith')){
         followButtonTwo.textContent = 'Unfollow'
@@ -225,14 +277,75 @@ async function getFollowing() {
     }
 }
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const form = document.getElementById('followFormOne');
+async function getUsers() {
+    const currentToken = localStorage.getItem('token');
+    const url = `/api/v1/users/`
 
-//     form.addEventListener('submit', async function (event) {
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${currentToken}`,
+                "Content-Type": "application/json"
+            }
+        });
+        const users = await response.json();
+        return users
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error; 
+    }
+}
 
-//         createPost(postContent);
-//     });
+async function displayUsers() {
+    const users = await getUsers();
+    users.forEach(username => console.log(username));
+}
 
-//     // Initial display of posts when the page loads
-//     displayPosts();
-// });
+async function followUser(userToFollow, userToBeFollowed) {
+    const url = `/api/v1/users/${userToFollow}/following/${userToBeFollowed}`;
+    const token = localStorage.getItem('token');
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.status === 201) {
+            console.log('User has successfully been followed.');
+        } else if (response.status === 400) {
+            console.error('Bad request. User to follow does not exist.');
+        } else if (response.status === 401) {
+            console.error('Unauthorized. User is not logged in or username in path does not match logged in user.');
+        } else {
+            console.error('Unexpected error:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error following user:', error);
+    }
+}
+
+async function unfollowUser(userToFollow, userToBeFollowed) {
+    const url = `/api/v1/users/${userToFollow}/following/${userToBeFollowed}`;
+    const token = localStorage.getItem('token');
+
+    try {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        throw new Error('Error unfollowing user:', error);
+    }
+}
